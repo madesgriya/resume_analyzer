@@ -3,7 +3,8 @@ research_task:
     Conduct a thorough research this tech job posting {job_url}
     and also analyze the uploaded resume.
     Compare the two and bring the relevant industrial data
-    to supporrt whether 
+    to supporrt whether the candidate is a good match. 
+    if more skills or certification is needed, list them. 
   expected_output: >
     A detailed list on what are the skills missing from the candidate,
     advice if certification is requried.
@@ -11,3 +12,41 @@ research_task:
     the most common industrial tools. Make it into markdown format. 
   output_file: "research_output.md"
   agent: researcher
+  # async_execution: True
+
+profile_task:
+  description: >
+    based on the job url {job_url}, and industry standard,
+    look for resume references that would match the job description.
+    taylor the ideal candidate descriptions to match
+    the industry standard where the candidate would success. 
+    provide the top candidate descriptions for the job. 
+    How the ideal candidate would phrase their achievements on the resume,
+    taking into account their years of experience to match the job requirements.  
+  expected_output: >
+    List of type of achievement required to be the top candidate. 
+    this list will be as the reference for the future candidate resume that
+    will help them succeed in the application process and convice the recuiter to pick their resume
+    but also to pass the ATS.  
+  agent: profiler
+  async_execution: True
+
+# resume_strategy_task:
+#   description: >
+#     Based on the result from the research and profiler,
+#   expected_output: >
+    
+#   output_file: "revised_resume.md"
+#   context: [research_task, profile_task]
+#   agent: resume_strategist
+
+
+# interview_preparation_task:
+#   description: >
+#     Profile the uploaded resume
+#   expected_output: >
+#     sss
+#   output_file: "interview_preparation.md"
+#   context: [research_task, profile_task, resume_strategy_task]
+#   agent: interview_preparer
+
