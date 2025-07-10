@@ -1,0 +1,13 @@
+research_task:
+  description: >
+    Conduct a thorough research this tech job posting {job_url}
+    and also analyze the uploaded resume.
+    Compare the two and bring the relevant industrial data
+    to supporrt whether 
+  expected_output: >
+    A detailed list on what are the skills missing from the candidate,
+    advice if certification is requried.
+    see what are the industrial standard for the role. is the posted role using 
+    the most common industrial tools. Make it into markdown format. 
+  output_file: "research_output.md"
+  agent: researcher
