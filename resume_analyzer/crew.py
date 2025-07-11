@@ -52,9 +52,9 @@ class ResumeAnalyzer():
             config=self.tasks_config['profile_task'], 
         )
     @task
-    def resume_strategist_task(self) -> Task:
+    def resume_strategy_task(self) -> Task:
         return Task(
-            config=self.tasks_config['resume_strategist_task'], 
+            config=self.tasks_config['resume_strategy_task'], 
         )
     @task
     def interview_preparation_task(self) -> Task:
