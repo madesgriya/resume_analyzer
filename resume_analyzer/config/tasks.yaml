@@ -6,7 +6,9 @@ research_task:
     to supporrt whether the candidate is a good match. 
     if more skills or certification is needed, list them. 
   expected_output: >
-    A detailed list on what are the skills missing from the candidate,
+    A structured list of the job requirement, including the necessary skills,
+    qualification and experience.
+    Also prodide a detailed list on what are the skills missing from the candidate,
     advice if certification is requried.
     see what are the industrial standard for the role. is the posted role using 
     the most common industrial tools. Make it into markdown format. 
@@ -31,22 +33,35 @@ profile_task:
   agent: profiler
   async_execution: True
 
-# resume_strategy_task:
-#   description: >
-#     Based on the result from the research and profiler,
-#   expected_output: >
-    
-#   output_file: "revised_resume.md"
-#   context: [research_task, profile_task]
-#   agent: resume_strategist
+resume_strategy_task:
+  description: >
+    Based on the result from the research and profiler,
+    recreate the resume with similar format. Try not to replace the existing career
+    achievement details the candidate provide on their resume with a completely new one. 
+    If possible try to rephrase the sentence and look for redflags based on the year of experience
+    and job title. make sure the decription of achievement matched the role and year of exp.
+    also structure the skillset if they're missaligned in the different fields.   
+  expected_output: >
+    A taylored resume with simmilar format with the inputed resume that is coming as close as 
+    perfect matches to the job description.
+  output_file: "revised_resume.md"
+  context: [research_task, profile_task]
+  agent: resume_strategist
 
 
-# interview_preparation_task:
-#   description: >
-#     Profile the uploaded resume
-#   expected_output: >
-#     sss
-#   output_file: "interview_preparation.md"
-#   context: [research_task, profile_task, resume_strategy_task]
-#   agent: interview_preparer
+interview_preparation_task:
+  description: >
+    Based on the job url {job_url}, analyze the possible interview questions 
+    both technical, professional, and behavioral. Analyze possible rounds of interview.
+    gather info from web scrapping if possible to find the latest information.
+    taking into account types of company and role seniority. give list of questions and 
+    best ways to answer them following the two-minute story and the STAR framework. 
+    Make sure to follow the answer based on the candidate achievement on their resume.
+    Do not make up stories. Also give out talking points. 
+  expected_output: >
+    "A document containing key questions and talking points "
+        "that the candidate should prepare for the interviews."
+  output_file: "interview_preparation.md"
+  context: [research_task, profile_task, resume_strategy_task]
+  agent: interview_preparer
 
