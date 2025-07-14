@@ -14,7 +14,7 @@ research_task:
     the most common industrial tools. Make it into markdown format. 
   output_file: "research_output.md"
   agent: researcher
-  # async_execution: True
+  async_execution: True
 
 profile_task:
   description: >
