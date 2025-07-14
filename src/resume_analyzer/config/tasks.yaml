@@ -12,9 +12,10 @@ research_task:
     advice if certification is requried.
     see what are the industrial standard for the role. is the posted role using 
     the most common industrial tools. Make it into markdown format. 
-  output_file: "research_output.md"
+    return the job url on the output file with the job title. 
+  output_file: "1research_output.md"
   agent: researcher
-  # async_execution: True
+  async_execution: True
 
 profile_task:
   description: >
@@ -44,7 +45,7 @@ resume_strategy_task:
   expected_output: >
     A taylored resume with simmilar format with the inputed resume that is coming as close as 
     perfect matches to the job description.
-  output_file: "revised_resume.md"
+  output_file: "2revised_resume.md"
   context: [research_task, profile_task]
   agent: resume_strategist
 
@@ -61,7 +62,7 @@ interview_preparation_task:
   expected_output: >
     "A document containing key questions and talking points "
         "that the candidate should prepare for the interviews."
-  output_file: "interview_preparation.md"
+  output_file: "3interview_preparation.md"
   context: [research_task, profile_task, resume_strategy_task]
   agent: interview_preparer
 

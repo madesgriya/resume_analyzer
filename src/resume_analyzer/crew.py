@@ -3,7 +3,7 @@ from crewai.project import CrewBase, agent, crew, task
 from crewai.agents.agent_builder.base_agent import BaseAgent
 from typing import List
 
-from crewai_tools import FileReadTool, SerperDevTool
+from crewai_tools import FileReadTool, SerperDevTool, ScrapeWebsiteTool
 
 @CrewBase
 class ResumeAnalyzer():
@@ -13,31 +13,32 @@ class ResumeAnalyzer():
         self.tasks: List[Task]
         self.read_resume = FileReadTool(file_path='./fake_resume.md')
         self.search_tool = SerperDevTool()
+        self.scrape_tool = ScrapeWebsiteTool()
 
     ################# List of Agents #################
     @agent
     def researcher(self) -> Agent:
         return Agent(
             config=self.agents_config['researcher'], 
-            tools = [self.read_resume]
+            tools = [self.scrape_tool, self.read_resume]
         )
     @agent
     def profiler(self) -> Agent:
         return Agent(
             config=self.agents_config['profiler'], 
-            tools = [self.read_resume, self.search_tool]
+            tools = [self.scrape_tool, self.read_resume, self.search_tool]
         )
     @agent
     def resume_strategist(self) -> Agent:
         return Agent(
             config=self.agents_config['resume_strategist'], 
-            tools = [self.read_resume, self.search_tool]
+            tools = [self.scrape_tool, self.read_resume, self.search_tool]
         )
     @agent
     def interview_preparer(self) -> Agent:
         return Agent(
             config=self.agents_config['interview_preparer'], 
-            tools = [self.read_resume, self.search_tool]
+            tools = [self.scrape_tool, self.read_resume, self.search_tool]
         )
     
     ################# List of Task #################
