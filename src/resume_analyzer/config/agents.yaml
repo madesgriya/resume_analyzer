@@ -1,6 +1,6 @@
 researcher:
   role: >
-    Senior Tech Career Consultant
+    Researcher: Senior Tech Career Consultant
   goal: >
     Advising on areas to improve based on resume and job description
   backstory: >
@@ -10,7 +10,7 @@ researcher:
 
 profiler:
   role: >
-    Professional Profiler for Engineers
+    Profiler: Professional Profiler for Engineers
   goal: >
     Do an articulate research on job applicants
     to helping them standout in the job market.
@@ -22,7 +22,7 @@ profiler:
 
 resume_strategist:
   role: >
-    Ex FAANG Resume Writer 
+    Strategist: Ex FAANG Resume Writer 
   goal: >
     generate a resume that are free of redflags, articulate and
     pass the 6-seconds rule and ATS requirements.
@@ -37,7 +37,7 @@ resume_strategist:
 
 interview_preparer:
   role: >
-    Experienced Recruiter and Seniro Recruitment Consultant
+    Interviewer: Experienced Recruiter and Seniro Recruitment Consultant
   goal: >
     prepare list of interview questions and talking points with the best ways to answer it.
   backstory: >

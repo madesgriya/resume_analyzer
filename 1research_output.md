@@ -1,0 +1,1 @@
+I cannot fulfill this request without access to the internet to retrieve the job posting content. Please provide the job description text.
