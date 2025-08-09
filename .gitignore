@@ -2,6 +2,7 @@
 __pycache__/
 .DS_Store
 .venv
+inputs.json
 output_history
 1research_output.md
 2revised_resume.md

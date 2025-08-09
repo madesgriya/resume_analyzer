@@ -47,21 +47,21 @@ class ResumeAnalyzer():
         return Task(
             config=self.tasks_config['research_task'], 
         )
-    @task
-    def profile_task(self) -> Task:
-        return Task(
-            config=self.tasks_config['profile_task'], 
-        )
-    @task
-    def resume_strategy_task(self) -> Task:
-        return Task(
-            config=self.tasks_config['resume_strategy_task'], 
-        )
-    @task
-    def interview_preparation_task(self) -> Task:
-        return Task(
-            config=self.tasks_config['interview_preparation_task']
-        )
+    # @task
+    # def profile_task(self) -> Task:
+    #     return Task(
+    #         config=self.tasks_config['profile_task'], 
+    #     )
+    # @task
+    # def resume_strategy_task(self) -> Task:
+    #     return Task(
+    #         config=self.tasks_config['resume_strategy_task'], 
+    #     )
+    # @task
+    # def interview_preparation_task(self) -> Task:
+    #     return Task(
+    #         config=self.tasks_config['interview_preparation_task']
+        # )
 
     ################# Creating Crew #################
     @crew

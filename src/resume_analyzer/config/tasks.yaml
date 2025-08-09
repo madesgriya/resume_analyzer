@@ -49,7 +49,6 @@ resume_strategy_task:
   context: [research_task, profile_task]
   agent: resume_strategist
 
-
 interview_preparation_task:
   description: >
     Based on the job url {job_url}, analyze the possible interview questions 
